@@ -4,5 +4,52 @@
 @import '@radix-ui/colors/red-dark.css';
 
 body {
+  height: 100vh;
+}
+
+.main-container {
   height: 100svh;
+  background-color: var(--gray-1);
+  padding: 10px 50px;
+  color: var(--gray-12);
+}
+
+header {
+  display: flex;
+}
+
+img {
+  height: 40px;
+}
+
+.box {
+  flex: 1;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;          
+  font-size: 21px;
+}
+
+.log-reg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 18px;
+}
+
+.login {
+  margin-right: 18px;
+}
+
+.reg-container {
+  background-color: var(--gray-12);
+  border-radius: 20px;
+}
+
+.register {
+  color: var(--gray-1);
+  padding: 0 12px 2px;
 }
