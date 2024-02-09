@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useRef } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,12 +11,20 @@ function App() {
   const [input, setInput] = useState<string>('');
   const [search, setSearch] = useState<string>('');
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const handleInput = (e: ChangeEvent<HTMLInputElement>): void => {
     setInput(e.target.value);
   };
 
   const handleSearch = (): void => {
     input ? setSearch(input) : setSearch('');
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   return (
@@ -26,7 +34,7 @@ function App() {
         <section>
           <div className='section-container'>
             <div className='searchbar'>
-              <input onChange={e => handleInput(e)} value={input} placeholder='SEARCH' type="text"/>
+              <input ref={inputRef} onChange={e => handleInput(e)} onKeyDown={handleKeyDown} value={input} placeholder='SEARCH' type="text"/>
               <button onClick={handleSearch}>
                 <img className='search-sword' src={darkMode ? darkLogo : whiteLogo} alt="logo" />
               </button>
