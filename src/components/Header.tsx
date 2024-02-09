@@ -8,7 +8,7 @@ const Header = ({darkMode}:Props) => {
     <header>
       <span className='box'></span>
       <span className='box title'>
-        <img src={darkMode ? whiteLogo : darkLogo} alt="logo" />
+        <img className='header-sword' src={darkMode ? whiteLogo : darkLogo} alt="logo" />
         <h1>QuestCritic</h1>
       </span>
       <span className='box log-reg'>
