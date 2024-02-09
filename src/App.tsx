@@ -1,8 +1,7 @@
-import { useState, ChangeEvent, useRef } from 'react';
+import { useState, ChangeEvent, useRef, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
 import darkLogo from './assets/qcLogoDark.png';
 import whiteLogo from './assets/qcLogoWhite.png';
 
@@ -27,6 +26,30 @@ function App() {
     }
   };
 
+  // const fetchGames = async () : Promise<void> => {
+  //   const url = 'https://api.igdb.com/v4/games';
+  //   const options = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Client-ID': import.meta.env.VITE_CLIENT,
+  //       'Authorization': import.meta.env.VITE_BEARER
+  //     },
+  //     body: 'fields name, cover.url, release_dates.human, platforms.name, summary; where cover!=null & summary!=null; sort release_dates.date desc; limit 15;'
+  //   };
+
+  //   try {
+  //     const response = await fetch(url, options);
+  //     const result = await response.json();
+  //     console.log(result);
+  //   } catch (error) {
+  //     console.log(error);
+  //   };
+  // };
+
+  // useEffect(() => {
+  //   fetchGames();
+  // }, []);
+
   return (
     <main className={darkMode ? 'dark' : 'light'}>
       <div className='main-container'>
@@ -41,7 +64,9 @@ function App() {
             </div>
             <div className='content-container'>
               <h2>{search ? `Results for "${search}"` : 'Featured Games'}</h2>
-              <div className='games-container'></div>
+              <div className='games-container'>
+
+              </div>
             </div>
           </div>
         </section>
