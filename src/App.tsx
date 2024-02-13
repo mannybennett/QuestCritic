@@ -1,9 +1,12 @@
-import { useState, ChangeEvent, useRef, useEffect } from 'react';
+import { useState, ChangeEvent, useRef } from 'react';
 import './App.css';
+import games from './games.json';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import darkLogo from './assets/qcLogoDark.png';
 import whiteLogo from './assets/qcLogoWhite.png';
+import Rating from '@mui/material/Rating';
+import Tooltip from '@mui/material/Tooltip';
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -27,7 +30,7 @@ function App() {
   };
 
   // const fetchGames = async () : Promise<void> => {
-  //   const url = 'https://api.igdb.com/v4/games';
+  //   const url = '/api/games';
   //   const options = {
   //     method: 'POST',
   //     headers: {
@@ -54,20 +57,41 @@ function App() {
     <main className={darkMode ? 'dark' : 'light'}>
       <div className='main-container'>
         <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
-        <section>
-          <div className='section-container'>
+        <div className='content-container'>
+          <div className='search-container'>
             <div className='searchbar'>
               <input ref={inputRef} onChange={e => handleInput(e)} onKeyDown={handleKeyDown} value={input} placeholder='SEARCH' type="text"/>
               <button onClick={handleSearch}>
                 <img className='search-sword' src={darkMode ? darkLogo : whiteLogo} alt="logo" />
               </button>
             </div>
-            <div className='content-container'>
-              <h2>{search ? `Results for "${search}"` : 'Featured Games'}</h2>
+            <h2>{search ? `Results for "${search}"` : 'Featured Games'}</h2>
+          </div>
+        </div>
+        <section>
+          <div className='section-container'>
               <div className='games-container'>
-
+                {games.map((game, key) => {
+                  return (
+                    <div className='game' key={key}>
+                      <div className='cover-container'>
+                        <img className='cover' src={`https:${game.cover.url}`} alt="cover" />
+                      </div>
+                      <div className='info-container'>
+                        <Tooltip enterDelay={300} title={game.name} placement="top-start">
+                          <h3>{game.name}</h3>
+                        </Tooltip>
+                        <Rating
+                          sx={{'& .MuiRating-iconEmpty': {fill: 'transparent', color: 'grey' }}}
+                          name="read-only"
+                          value={0}
+                          max={10}
+                        />
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
-            </div>
           </div>
         </section>
         <Footer darkMode={darkMode} setDarkMode={setDarkMode}/>
