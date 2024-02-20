@@ -2,11 +2,10 @@ import { useState, ChangeEvent, useRef } from 'react';
 import './App.css';
 import games from './games.json';
 import Header from './components/Header';
+import Feed from './components/Feed';
 import Footer from './components/Footer';
 import darkLogo from './assets/qcLogoDark.png';
 import whiteLogo from './assets/qcLogoWhite.png';
-import Rating from '@mui/material/Rating';
-import Tooltip from '@mui/material/Tooltip';
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -73,22 +72,7 @@ function App() {
               <div className='games-container'>
                 {games.map((game, key) => {
                   return (
-                    <div className='game' key={key}>
-                      <div className='cover-container'>
-                        <img className='cover' src={`https:${game.cover.url}`} alt="cover" />
-                      </div>
-                      <div className='info-container'>
-                        <Tooltip enterDelay={300} title={game.name} placement="top-start">
-                          <h3>{game.name}</h3>
-                        </Tooltip>
-                        <Rating
-                          sx={{'& .MuiRating-iconEmpty': {fill: 'transparent', color: 'grey' }}}
-                          name="read-only"
-                          value={0}
-                          max={10}
-                        />
-                      </div>
-                    </div>
+                    <Feed game={game} key={key} />
                   )
                 })}
               </div>

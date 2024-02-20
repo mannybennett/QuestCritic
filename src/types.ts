@@ -20,3 +20,7 @@ export interface Game {
   }[];
   summary: string;
 }
+
+export interface FeedProps {
+  game: Game;
+}

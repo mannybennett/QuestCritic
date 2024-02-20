@@ -706,5 +706,51 @@
           }
       ],
       "summary": "Dueling Network (commonly abbreviated DN) was an online, unofficial Adobe Flash–based simulation of the Yu-Gi-Oh! Trading Card Game (TCG). It was created by Christopher Salvarani on March 3, 2006 and officially released on May 17, 2011. Its popularity grew quickly and it had gained more than four million registered users. The site was run by in-game volunteer administrators and moderators. At its peak, its server allowed for more than 10.000 players to be online at the same time."
-  }
+    },
+    {
+        "id": 146778,
+        "cover": {
+            "id": 247410,
+            "url": "//images.igdb.com/igdb/image/upload/t_cover_big/co5awi.jpg"
+        },
+        "name": "Little Squire's Quests",
+        "platforms": [
+            {
+                "id": 130,
+                "name": "Nintendo Switch"
+            }
+        ],
+        "release_dates": [
+            {
+                "id": 251163,
+                "human": "Jan 19, 2021"
+            },
+            {
+                "id": 340665,
+                "human": "Jan 18, 2021"
+            }
+        ],
+        "summary": "Join Little Squire’s Quests to help our hero save the princess in the best pin rescue game. Your task is simple, just pull the pins, kill monsters, rescue the princess, collect treasure and complete the level. Sharpen your brain and improve intelligence by playing pull the pin puzzle game, you will always find it fascinating and engaging from start to finish. Many quests await you in our pull the pin game. Kill demons, kill spiders, pass lava, hunt for treasures, save the princess. Test your wits by solving 100’s of challenging brain puzzles. The beautiful princess and treasure chests are waiting for you to rescue and collect, let's play now! What are you waiting for? quick go download now and play Little Squire’s Quests – and begin your journey of the best pull the pins game today!"
+    },
+    {
+        "id": 283004,
+        "cover": {
+            "id": 356651,
+            "url": "//images.igdb.com/igdb/image/upload/t_cover_big/co7n6z.jpg"
+        },
+        "name": "Porky's",
+        "platforms": [
+            {
+                "id": 68,
+                "name": "ColecoVision"
+            }
+        ],
+        "release_dates": [
+            {
+                "id": 555123,
+                "human": "TBD"
+            }
+        ],
+        "summary": "Porky's was a prototype game designed for the ColecoVision in 1983. Revenge is sweet... and you're out to get it. You've been \"had\" at Porky's, and you're out to blow it away. The action's hot and heavy and it's up to you to keep Pee Wee on his toes. If he succumbs to distraction, it's the pits! It's more fun than a greased pig... it's a blast!"
+    }
 ]

@@ -119,10 +119,27 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
-section::-webkit-scrollbar {
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: darkgrey; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+::-webkit-scrollbar-button {
   display: none;
 }
 
@@ -132,45 +149,40 @@ section::-webkit-scrollbar {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .games-container {
   height: 100%;
+  margin-right: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .game {
-  width: calc((100% - (4 - 1) * 20px) / 4);
-  margin-bottom: 10px;
+  width: calc((100% - (5 - 1) * 20px) / 5);
+  margin-bottom: 22px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 900px) {
+  .game {
+    width: calc((100% - (4 - 1) * 20px) / 4);
+  }
+}
+
+@media screen and (max-width: 700px) {
   .game {
     width: calc((100% - (3 - 1) * 20px) / 3);
   }
 }
 
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 540px) {
   .game {
     width: calc((100% - (2 - 1) * 20px) / 2);
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .games-container {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .game {
-    width: 240px;
   }
 
   .search-container {
@@ -190,6 +202,7 @@ section::-webkit-scrollbar {
   height: 80%;
   border-radius: 5px;
   box-shadow: 0px 5px 10px -1px black;
+  cursor: pointer;
 }
 
 .cover {
@@ -207,10 +220,35 @@ section::-webkit-scrollbar {
 
 h3 {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 19px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.average-rating {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-10);
+  padding: 3px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.number {
+  color: var(--gray-1);
+  font-size: 23px;
+  padding: 0 4px 7px 0;
+  cursor: default;
+  line-height: 1px;
+}
+
+.star {
+  width: 21px;
+  height: 21px;
+  color: #FAAE01;
 }
 
 /* ------------------------------------------------------------------------------ */
